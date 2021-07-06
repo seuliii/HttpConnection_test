@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         };
         //timer 설정 (해야할 일 , 몇 초후에 시작할지, 타이머 주기)
         Timer timer = new Timer();
-        timer.schedule(tt,10000,10000);
+        timer.schedule(tt,3000,3000);
     }
 
 

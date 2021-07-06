@@ -42,7 +42,7 @@ public class OKHttpConnection{
         body = new FormBody.Builder()
                 .add("image", imageString).build();
         request = new Request.Builder()
-                .url("http://192.168.1.26:8000/yogat/free_mode")
+                .url("http://192.168.0.9:8000/yogat/free_mode")
                 .post(body)
                 .build();
         client.newCall(request).enqueue(OKHttpCallback);
