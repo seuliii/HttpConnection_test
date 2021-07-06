@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.flavienlaurent.discrollview:library:0.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e3412d04a4ea9bb44c4be18c05f27eaa/jetified-library-0.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e3412d04a4ea9bb44c4be18c05f27eaa/jetified-library-0.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e3412d04a4ea9bb44c4be18c05f27eaa/jetified-library-0.0.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.flavienlaurent.discrollview/library/0.0.2/bd91e7cd530b2490a2f840dd3023b9f7109a2ebc/library-0.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.flavienlaurent.discrollview/library/0.0.2/35084d06b555559720c51a49243961be9e40a630/library-0.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

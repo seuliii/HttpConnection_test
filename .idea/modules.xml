@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HttpConnection_test.iml" filepath="$PROJECT_DIR$/.idea/modules/HttpConnection_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/afterframework_sendimages/HttpConnection_test.afterframework_sendimages.iml" filepath="$PROJECT_DIR$/.idea/modules/afterframework_sendimages/HttpConnection_test.afterframework_sendimages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HttpConnection_test.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HttpConnection_test.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sendimagetojango/HttpConnection_test.bitmaptoByteArray.iml" filepath="$PROJECT_DIR$/.idea/modules/sendimagetojango/HttpConnection_test.bitmaptoByteArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/checkcamerasize/HttpConnection_test.checkcamerasize.iml" filepath="$PROJECT_DIR$/.idea/modules/checkcamerasize/HttpConnection_test.checkcamerasize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/freemode/HttpConnection_test.freemode.iml" filepath="$PROJECT_DIR$/.idea/modules/freemode/HttpConnection_test.freemode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/frontvideorecording/HttpConnection_test.frontvideorecording.iml" filepath="$PROJECT_DIR$/.idea/modules/frontvideorecording/HttpConnection_test.frontvideorecording.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/layouttest/HttpConnection_test.layouttest.iml" filepath="$PROJECT_DIR$/.idea/modules/layouttest/HttpConnection_test.layouttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mediaframework/HttpConnection_test.mediaframework.iml" filepath="$PROJECT_DIR$/.idea/modules/mediaframework/HttpConnection_test.mediaframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sendimagetest/HttpConnection_test.sendimagetest.iml" filepath="$PROJECT_DIR$/.idea/modules/sendimagetest/HttpConnection_test.sendimagetest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sendimagetojangoserver/HttpConnection_test.sendimagetojangoserver.iml" filepath="$PROJECT_DIR$/.idea/modules/sendimagetojangoserver/HttpConnection_test.sendimagetojangoserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/setimageviewtest/HttpConnection_test.setimageviewtest.iml" filepath="$PROJECT_DIR$/.idea/modules/setimageviewtest/HttpConnection_test.setimageviewtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/statisticstest/HttpConnection_test.statisticstest.iml" filepath="$PROJECT_DIR$/.idea/modules/statisticstest/HttpConnection_test.statisticstest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/video_test/HttpConnection_test.video_test.iml" filepath="$PROJECT_DIR$/.idea/modules/video_test/HttpConnection_test.video_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yogatintegration/HttpConnection_test.yogatintegration.iml" filepath="$PROJECT_DIR$/.idea/modules/yogatintegration/HttpConnection_test.yogatintegration.iml" />
+    </modules>
+  </component>
+</project>
