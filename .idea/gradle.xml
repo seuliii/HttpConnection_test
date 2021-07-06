@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/afterframework_sendimages" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bitmaptoByteArray" />
+            <option value="$PROJECT_DIR$/checkcamerasize" />
+            <option value="$PROJECT_DIR$/freemode" />
+            <option value="$PROJECT_DIR$/frontvideorecording" />
+            <option value="$PROJECT_DIR$/layouttest" />
+            <option value="$PROJECT_DIR$/mediaframework" />
+            <option value="$PROJECT_DIR$/sendimagetest" />
+            <option value="$PROJECT_DIR$/sendimagetojangoserver" />
+            <option value="$PROJECT_DIR$/setimageviewtest" />
+            <option value="$PROJECT_DIR$/statisticstest" />
+            <option value="$PROJECT_DIR$/video_test" />
+            <option value="$PROJECT_DIR$/yogatintegration" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
