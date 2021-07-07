@@ -1,5 +1,8 @@
 package com.example.yogatintegration;
 
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import java.io.IOException;
@@ -42,10 +45,18 @@ public class OKHttpConnection{
         body = new FormBody.Builder()
                 .add("image", imageString).build();
         request = new Request.Builder()
-                .url("http://192.168.1.26:8000/yogat/predict")
+                .url("http://192.168.0.10:8000/yogat/userImage_save")
                 .post(body)
                 .build();
         client.newCall(request).enqueue(OKHttpCallback);
+/*
+        Handler handler = new MainHandler();
+        Message message =handler.obtainMessage();
+        Bundle bundle = new Bundle();
+        bundle.putString("responseData",responseData);
+        message.setData(bundle);
+
+        handler.sendMessage(message);*/
 
 
     }
