@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     //MainActivity
     static Context context;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     //object
     private OKHttpConnection okHttpConnection;
     private TextToSpeech_yogat tts;
+    Handler handler;
 
 
     //camera preview
@@ -58,28 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //권한 허가 (onCreate메소드 안에서 호출해야 함)
-        AndPermission.with(this)
-                .runtime()
-                .permission(
-                        com.yanzhenjie.permission.runtime.Permission.CAMERA,
-                        com.yanzhenjie.permission.runtime.Permission.RECORD_AUDIO,
-                        com.yanzhenjie.permission.runtime.Permission.READ_EXTERNAL_STORAGE,
-                        com.yanzhenjie.permission.runtime.Permission.WRITE_EXTERNAL_STORAGE)
-                .onGranted(new Action<List<String>>() {
-                    @Override
-                    public void onAction(List<String> permissions) {
-                        Toast.makeText(MainActivity.context,"허용된 권한 갯수: " + permissions.size(),Toast.LENGTH_LONG).show();
-                    }
-                })
-                .onDenied(new Action<List<String>>() {
-                    @Override
-                    public void onAction(List<String> permissions) {
-                        Toast.makeText(MainActivity.context,"거부된 권한 갯수: " + permissions.size(),Toast.LENGTH_LONG).show();
-                        //권한 허가 거부하면 어플을 사용할 수 없습니다 라는 안내문 표시
-                    }
-                })
-                .start();
+        checkPermission();
 
         //init
         mCamera = getCameraInstance();
@@ -107,24 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         //촬영 버튼
-        captureBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                timerInTakingPictures();
-            }
-        });
-
+        captureBtn.setOnClickListener(this);
         //정지 버튼
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //타이머 해제
-                tt.cancel();
-            }
-        });
-
-
-
+        stopBtn.setOnClickListener(this);
+        //handler = new MainHandler();
     }   //onCreate
 
     //Django서버에 이미지를 전송
@@ -134,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             //http통신에선 데이터를 주고 받을 때 String형식을 통해 주고받을 수 있음
             //Base64를 통해서 byteArray를 String으로 변환해서 전송
             imageBitmap =  mCameraView.getBitmap();
-            pictureByteArr = bitmapToByteArray(imageBitmap);
+            pictureByteArr = Base64Util.bitmapToByteArray(imageBitmap);
             imageString = Base64Util.encode(pictureByteArr);
 
         } catch (UnsupportedEncodingException e) {
@@ -144,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         okHttpConnection.sendToServer(imageString);
         responseData = OKHttpConnection.responseData;
         Log.d("seul","responseData in sendToServer method in Main is" + responseData);
-        intent.putExtra("responseData",responseData);
+
 
 
 
@@ -170,9 +137,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 mCameraView.capture();
-                pictureByteArr = CameraPreview.imagebytes;
                 sendToServer();
                 Log.d("seul","responseData in Timer is " + responseData  );
+
                 tts.sayText(responseData);
             }
         };
@@ -182,12 +149,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public byte[] bitmapToByteArray (Bitmap $bitmap){
 
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        $bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
-        return byteArray;
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.captureBtn){
+
+            timerInTakingPictures();
+
+        }else if(v.getId() == R.id.stopBtn){
+            tt.cancel();
+        }else{
+
+        }
     }
-
+    private void checkPermission(){
+        //권한 허가 (onCreate메소드 안에서 호출해야 함)
+        AndPermission.with(MainActivity.this)
+                .runtime()
+                .permission(
+                        com.yanzhenjie.permission.runtime.Permission.CAMERA,
+                        com.yanzhenjie.permission.runtime.Permission.RECORD_AUDIO,
+                        com.yanzhenjie.permission.runtime.Permission.READ_EXTERNAL_STORAGE,
+                        com.yanzhenjie.permission.runtime.Permission.WRITE_EXTERNAL_STORAGE)
+                .onGranted(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> permissions) {
+                        Toast.makeText(MainActivity.this,"허용된 권한 갯수: " + permissions.size(),Toast.LENGTH_LONG).show();
+                    }
+                })
+                .onDenied(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> permissions) {
+                        Toast.makeText(MainActivity.this,"거부된 권한 갯수: " + permissions.size(),Toast.LENGTH_LONG).show();
+                        //권한 허가 거부하면 어플을 사용할 수 없습니다 라는 안내문 표시
+                    }
+                })
+                .start();
+    }
 }
